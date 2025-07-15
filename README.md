@@ -1,39 +1,79 @@
-## EX.NO-1-ATM-AND-BANKING-SYSTEM
+## Fake Urls And Spam E-mail Detection
 
 ### NAME : PRAVEEN V
 
 ### REGISTER NO : 212222233004
 
 ## AIM:
-To study the problem statement, SRS document and draw all the UML diagrams of ATM System.
+A web-based fake URL and email detection tool hosted on Netlify.
 
 ## PROBLEM STATEMENT:
 To create ATM System software that will meet the needs of the applicant and help them to withdraw money,deposit.
+# Fake URL Detector
 
-## UML DIAGRAMS:
-#### USE CASE:
+A web application to detect fake URLs and emails, built with [Bolt](https://boltcss.com) and hosted on [Netlify](https://resplendent-swan-61ccee.netlify.app/).
 
-![1](https://github.com/user-attachments/assets/ba1854d3-1c55-40e5-98c7-0a843b2312f6)
+## Features
+- Detects phishing or suspicious links
+- Identifies fake email patterns
+- Responsive UI for desktop and mobile
 
-#### CLASS DIAGRAM:
+## Live Demo
+🔗 https://resplendent-swan-61ccee.netlify.app/
 
-![2](https://github.com/user-attachments/assets/6aeb1c37-5a8f-4c15-980b-9ae07509fac6)
+## Technologies Used
+- HTML/CSS/JavaScript
+- Bolt CSS
+- Netlify Hosting
 
-#### ACTIVITY DIAGRAM:
+## Program(Front End)
+```
 
-![440642481-053bc8fe-43d3-431d-9b43-124e33c8dd09](https://github.com/user-attachments/assets/c6f68a3d-dafd-4158-ad95-b0ce2d8f8896)
+---
 
-#### SEQUENCE DIAGRAM:
+### ✅ `index.html` (basic example, update if you have a custom version)
 
-![4](https://github.com/user-attachments/assets/63c2ef3d-764f-4b2a-b203-8e56929657d0)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake URL & Email Detector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Fake URL & Email Detector</h1>
+  <input type="text" id="inputField" placeholder="Enter URL or Email" />
+  <button onclick="validateInput()">Check</button>
+  <p id="result"></p>
 
-#### PACKAGE DIAGRAM:
+  <script src="script.js"></script>
+</body>
+</html>
 
-![5](https://github.com/user-attachments/assets/7fcc9819-8d5e-4964-83a6-f83697324296)
+```
+## Program(Back End)
+```
+function validateInput() {
+  const input = document.getElementById("inputField").value.trim();
+  const result = document.getElementById("result");
 
-#### COMMUNICATION DIAGRAM:
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const urlRegex = /^(https?:\/\/)?([\w\-]+\.)+[a-z]{2,6}(\/[\w\-]*)*\/?$/i;
 
-![6](https://github.com/user-attachments/assets/3dbd02e1-ab75-4076-85bb-d1dec047a4f8)
+  if (emailRegex.test(input)) {
+    result.textContent = "✅ Valid email address";
+    result.style.color = "green";
+  } else if (urlRegex.test(input)) {
+    result.textContent = "✅ Valid URL";
+    result.style.color = "green";
+  } else {
+    result.textContent = "❌ Invalid or suspicious input";
+    result.style.color = "red";
+  }
+}
 
+```
 ## RESULT:
-Thus the ATM and banking system project was executed and the output was verified.
+Two computers were successfully connected in a peer-to-peer network, allowing both to act as client and server by sharing files and sending data without using a centralized server.
